@@ -2,6 +2,11 @@ import { useState, useEffect } from "react";
 
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzbob2MaiB0WkiwYYFZpXWQTB1WJRfwN72M1lHDF_PkSiIlAKBNiQMR6BTUZp3icMw4/exec";
 
+const _fontLink = document.createElement("link");
+_fontLink.rel = "stylesheet";
+_fontLink.href = "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap";
+document.head.appendChild(_fontLink);
+
 // ─── PLANT DEFINITIONS ───────────────────────────────────────────────────────
 const plantData = [
   {
@@ -435,7 +440,7 @@ export default function PlantQuiz() {
   const darkBg = {
     minHeight: "100vh",
     background: "linear-gradient(160deg, #0f1a12 0%, #1a2e1e 40%, #0d1a1f 100%)",
-    fontFamily: "'Georgia', 'Times New Roman', serif",
+    fontFamily: "'Lora', 'Georgia', serif",
     position: "relative",
     overflow: "hidden"
   };
@@ -463,14 +468,10 @@ export default function PlantQuiz() {
             fontSize: "clamp(36px, 7vw, 56px)", fontWeight: 400,
             color: "#f0f9f0", lineHeight: 1.15, marginBottom: 20, letterSpacing: "-0.5px"
           }}>
-            What Kind of<br />
-            <span style={{
-              background: "linear-gradient(135deg, #86efac, #6ee7b7, #34d399)",
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"
-            }}>Plant Are You?</span>
+            Garden Theory Quiz<br />
           </h1>
           <p style={{ fontSize: 16, color: "#9ca3af", lineHeight: 1.8, marginBottom: 10, fontStyle: "italic" }}>
-            54 questions. No plant names attached.<br />Just honest answers about how you work best.
+           Find your plant type and the environment where you grow best.
           </p>
           <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 40, fontFamily: "sans-serif" }}>
             ~5 minutes · Trust your first instinct
@@ -569,6 +570,7 @@ export default function PlantQuiz() {
             // Statement: 4-point Likert scale
             <>
               <style>{`
+                @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
                 .likert-btn {
                   padding: 13px 18px;
                   border-radius: 4px;
