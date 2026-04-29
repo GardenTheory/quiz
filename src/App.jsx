@@ -394,13 +394,29 @@ export default function PlantQuiz() {
       result_secondary: second.score >= 3 ? second.id : ""
     };
 
-    // Fire-and-forget — don't block the UI on the network response
-    fetch(APPS_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    }).catch(() => {}); // swallow silently, submission is best-effort
+    // Send via GET with query params — works reliably with Apps Script no-cors
+    const params = new URLSearchParams({
+      timestamp: payload.timestamp,
+      name: payload.name,
+      email: payload.email,
+      status: payload.status,
+      sunflower: payload.sunflower,
+      jade: payload.jade,
+      wildflower: payload.wildflower,
+      bonsai: payload.bonsai,
+      aloe: payload.aloe,
+      ivy: payload.ivy,
+      fern: payload.fern,
+      cactus: payload.cactus,
+      seedling: payload.seedling,
+      result: payload.result,
+      result_secondary: payload.result_secondary
+    });
+
+    fetch(APPS_SCRIPT_URL + "?" + params.toString(), {
+      method: "GET",
+      mode: "no-cors"
+    }).catch(() => {});
 
     setPhase("results");
     setSubmitting(false);
