@@ -463,7 +463,7 @@ export default function PlantQuiz() {
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
             fontSize: 13, letterSpacing: 4, textTransform: "uppercase",
             marginBottom: 20, fontStyle: "italic"
-          }}>Workplace Personality Quiz</div>
+          }}>What's Your Plant Type?</div>
           <h1 style={{
             fontSize: "clamp(36px, 7vw, 56px)", fontWeight: 400,
             color: "#f0f9f0", lineHeight: 1.15, marginBottom: 20, letterSpacing: "-0.5px"
