@@ -98,7 +98,7 @@ const plantData = [
     ]
   },
   {
-    id: "seedling", name: "Seedling", emoji: "🌱", color: "#7C3AED", bg: "#F5F3FF",
+    id: "bamboo", name: "Bamboo", emoji: "🌱", color: "#7C3AED", bg: "#F5F3FF",
     description: "You are in a growth phase — and that's a position of potential, not weakness. With clear expectations, patient mentorship, and safety to learn, you grow fast and flourish.",
     questions: [
       "I learn best through practice, feedback, and repetition rather than immediate performance.",
@@ -130,7 +130,7 @@ const fibQuestions = [
     options: [
       { label: "Energized — the open space is where I do my best work", plant: "wildflower" },
       { label: "Uncomfortable — I need clearer parameters before I can really dig in", plant: "bonsai" },
-      { label: "Cautious — I want to understand what success looks like first", plant: "seedling" },
+      { label: "Cautious — I want to understand what success looks like first", plant: "bamboo" },
       { label: "Neutral — I'll define my own structure and get on with it", plant: "jade" },
       { label: "Excited, but I want to riff on it with someone before I dive in", plant: "sunflower" }
     ]
@@ -154,7 +154,7 @@ const fibQuestions = [
       { label: "Understanding the full scope so I can plan my contribution precisely", plant: "bonsai" },
       { label: "Knowing my role is clear and I can get to work", plant: "cactus" },
       { label: "Scanning for where things might go wrong so I can get ahead of them", plant: "aloe" },
-      { label: "Being handed something half-formed and figuring it out as I go", plant: "seedling" }
+      { label: "Being handed something half-formed and figuring it out as I go", plant: "bamboo" }
     ]
   },
   {
@@ -164,7 +164,7 @@ const fibQuestions = [
       { label: "Step up, take charge, and start making calls — someone has to", plant: "cactus" },
       { label: "Do my part quietly and well, but I'm not reaching for the wheel", plant: "jade" },
       { label: "Try to figure out who the right person to lead it is and connect them to it", plant: "ivy" },
-      { label: "Feel anxious until the expectations and ownership are clearer", plant: "seedling" },
+      { label: "Feel anxious until the expectations and ownership are clearer", plant: "bamboo" },
       { label: "Start quietly absorbing what's broken and managing the people dynamics", plant: "aloe" }
     ]
   },
@@ -172,7 +172,7 @@ const fibQuestions = [
     id: "fib6",
     text: "When I think about the best manager I've ever had, what made them great was:",
     options: [
-      { label: "They checked in consistently, gave clear direction, and never left me guessing", plant: "seedling" },
+      { label: "They checked in consistently, gave clear direction, and never left me guessing", plant: "bamboo" },
       { label: "They were steady, warm, and genuinely invested in my wellbeing over time", plant: "fern" },
       { label: "They trusted me completely and stayed out of my way", plant: "jade" },
       { label: "They pushed me into visible opportunities and advocated for me loudly", plant: "sunflower" },
@@ -195,7 +195,7 @@ const fibQuestions = [
     id: "fib8",
     text: "When I'm new to something, what helps me most is:",
     options: [
-      { label: "A patient guide who checks in often and reassures me I'm on track", plant: "seedling" },
+      { label: "A patient guide who checks in often and reassures me I'm on track", plant: "bamboo" },
       { label: "A calm, stable environment where I can observe and absorb before performing", plant: "fern" },
       { label: "Clear written expectations I can return to on my own", plant: "bonsai" },
       { label: "Being thrown in — I learn fastest by doing, even if it's messy", plant: "wildflower" },
@@ -373,7 +373,7 @@ export default function PlantQuiz() {
       ivy_statements: scores["ivy"],
       fern_statements: scores["fern"],
       cactus_statements: scores["cactus"],
-      seedling_statements: scores["seedling"],
+      bamboo_statements: scores["bamboo"],
       // FIB answers (which plant each FIB awarded a point to)
       fib1: fibAnswers["fib1"] || "",
       fib2: fibAnswers["fib2"] || "",
@@ -393,7 +393,7 @@ export default function PlantQuiz() {
       ivy: scores["ivy"],
       fern: scores["fern"],
       cactus: scores["cactus"],
-      seedling: scores["seedling"],
+      bamboo: scores["bamboo"],
       // Primary result tag
       result: top.id,
       result_secondary: second.score >= 3 ? second.id : ""
@@ -413,7 +413,7 @@ export default function PlantQuiz() {
       ivy: payload.ivy,
       fern: payload.fern,
       cactus: payload.cactus,
-      seedling: payload.seedling,
+      bamboo: payload.bamboo,
       result: payload.result,
       result_secondary: payload.result_secondary
     });
